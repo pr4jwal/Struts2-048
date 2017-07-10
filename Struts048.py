@@ -6,7 +6,11 @@ CVE: CVE-2017-9791
 import sys
 import urllib
 import httplib
-import urllib2  
+import urllib2
+import ssl
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 httplib.HTTPConnection._http_vsn = 10  
 httplib.HTTPConnection._http_vsn_str = 'HTTP/1.0'  
 
@@ -17,7 +21,7 @@ def request(cmd):
 
 def post(url, data): 
     try:
-        req = urllib2.urlopen(url, data)
+        req = urllib2.urlopen(url, data, context=ctx)
         content = req.read()
         return content
     except urllib2.URLError, e:
