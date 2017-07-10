@@ -2,6 +2,7 @@
 Created on 2017-7-8
 CVE: CVE-2017-9791
 @author: DragonEgg
+Update: Prajwal Panchmahalkar
 '''
 import sys
 import urllib
@@ -42,9 +43,9 @@ def poc(url,cmd):
 
 def Usage():
     print 'check:'
-    print '    python file.py http://1.1.1.1/struts2-showcase/integration/saveGangster.action'
+    print '    python Struts048.py http://URL/struts2-showcase/integration/saveGangster.action'
     print 'poc:'
-    print '    python file.py http://1.1.1.1/struts2-showcase/integration/saveGangster.action command'
+    print '    python Struts048.py http://URL/struts2-showcase/integration/saveGangster.action command'
     
 if __name__ == '__main__':
 
